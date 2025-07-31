@@ -301,3 +301,16 @@ run_experiment <- function(stimuli_df, display_duration = 1000, ISI = 1000) {
   # ──────────────────────────────────────────────────────────────
   shiny::runApp(shiny::shinyApp(ui, server), launch.browser = TRUE)
 }
+
+#' Shuffle stimuli data frame
+#' @export
+shuffle_stimuli <- function(stimuli_df) {
+  stimuli_df |>
+    dplyr::bind_rows() |>
+    dplyr::group_by(block, type) |>
+    dplyr::sample_frac() |>
+    ungroup() |>
+    dplyr::group_split(block) |>
+    sample() |>
+    bind_rows()
+}
