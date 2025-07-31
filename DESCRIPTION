@@ -1,0 +1,30 @@
+Package: shinymemorytest
+Title: Interactive Multi-Block Study–Test Memory Experiment in Shiny
+Version: 0.0.0.9000
+Authors@R: 
+    person("Mark", "Andrews", , "mark.andrews@ntu.ac.uk", role = c("aut", "cre"))
+Description: 
+    Provides a fully-functional Shiny application for running rapid
+    study–test (old/new) recognition experiments with any number of
+    blocks.  Stimuli are supplied as a data frame or Excel file with
+    columns ‘block’, ‘type’ (study/test), and ‘item’.  During each
+    block the app flashes study words for a user-defined duration and
+    inter-stimulus interval, then presents test probes that remain on
+    screen until the participant chooses “Old” or “New”.  Response
+    accuracy is computed on the fly and a tidy trial-level data frame
+    is returned automatically when the experiment ends.  The package
+    aims to let behavioural researchers prototype memory tasks in
+    minutes with no HTML or JavaScript knowledge.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: 
+    dplyr,
+    ggplot2,
+    later,
+    readr,
+    readxl,
+    shiny,
+    shinyjs,
+    tibble
